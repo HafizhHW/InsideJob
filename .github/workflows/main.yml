@@ -24,10 +24,10 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: cd saucedemo/npm install
-
+        run: cd saucedemo && npm install 
+        
       - name: Jalankan Cypress tests
-        run: cd saucedemo/npx cypress run
+        run: cd saucedemo && npx cypress run
 
       - name: Upload Cypress video dan screenshot (optional)
         if: failure()
