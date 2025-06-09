@@ -14,8 +14,8 @@ describe('cek login dulu', () => {
         addproduct.additem();
     })
 
-    // it('cek keranjang', () => {
-    //     addproduct.toCart();
-    // })
+    it('cek keranjang', () => {
+        addproduct.toCart();
+    })
 
 })
