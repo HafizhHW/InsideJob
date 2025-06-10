@@ -11,58 +11,20 @@ on:
       - master
 
 jobs:
-  run-belajarcypress:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout belajarcypress
-        uses: actions/checkout@v3
-        with:
-          path: belajarcypress
-
-      - name: Setup Node.js for belajarcypress
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies for belajarcypress
-        run: cd belajarcypress && npm install
-
-      - name: Jalankan Cypress tests for belajarcypress
-        run: cd belajarcypress && npx cypress run
-
-      - name: Upload Cypress artifacts for belajarcypress (optional)
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-artifacts-belajarcypress
-          path: |
-            belajarcypress/cypress/videos
-            belajarcypress/cypress/screenshots
-
-  run-saucedemo:
+  run-action1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout saucedemo
         uses: actions/checkout@v3
-        with:
-          path: saucedemo
 
-      - name: Setup Node.js for saucedemo
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      - name: Run Action 1
+        uses: ./saucedemo/.github/workflows/ci.yml
 
-      - name: Install dependencies for saucedemo
-        run: cd saucedemo && npm install
+  run-action2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout belajarcypress
+        uses: actions/checkout@v3
 
-      - name: Jalankan Cypress tests for saucedemo
-        run: cd saucedemo && npx cypress run
-
-      - name: Upload Cypress artifacts for saucedemo (optional)
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-artifacts-saucedemo
-          path: |
-            saucedemo/cypress/videos
-            saucedemo/cypress/screenshots
+      - name: Run Action 2
+        uses: ./belajarcypress/.github/workflows/belajarcypress.yml
