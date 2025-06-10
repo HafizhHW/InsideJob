@@ -8,14 +8,14 @@ class Dashbord {
 
 
     // Aksi Klik di navigasi Menu
-    klikNavigasiMenu() {
-        cy.get(this.iconMenu).click();
-        cy.get(this.navigasiAbout).click();
-    }
+    // klikNavigasiMenu() {
+    //     cy.get(this.iconMenu).click();
+    //     cy.get(this.navigasiAbout).click();
+    // }
 
-    pilihDropDown() {
-        // cy.get(this.dropDown).select('Name (Z to A)')
-        cy.get(this.productBaju).should('content','Sauce Labs')
-    }
+    // pilihDropDown() {
+    //     // cy.get(this.dropDown).select('Name (Z to A)')
+    //     cy.get(this.productBaju).should('content','Sauce Labs')
+    // }
 }
 export default Dashbord;

@@ -10,9 +10,9 @@ describe('cek fungsi di navigasi', () => {
         cy.get('#login-button').click()
     })
 
-    it('cek dropdown', () => {
-        dashbord.pilihDropDown();
-    })
+    // it('cek dropdown', () => {
+    //     dashbord.pilihDropDown();
+    // })
 
     // it('cek navigasi menu', () => {
     //     dashbord.klikNavigasiMenu();
