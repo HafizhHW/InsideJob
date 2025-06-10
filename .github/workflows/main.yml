@@ -17,8 +17,11 @@ jobs:
       - name: Checkout saucedemo
         uses: actions/checkout@v3
 
-      - name: Run Action 1
-        uses: ./saucedemo/.github/workflows/action.yml
+      - name: Run saucedemo
+        run: |
+          cd saucedemo/.github/workflows && npx act action.yml
+          # Jalankan action1.yml sesuai dengan cara yang diperlukan
+          #npx act action.yml  # Sesuaikan dengan cara Anda mengeksekusi action
 
   run-action2:
     runs-on: ubuntu-latest
@@ -26,5 +29,9 @@ jobs:
       - name: Checkout belajarcypress
         uses: actions/checkout@v3
 
-      - name: Run Action 2
-        uses: ./belajarcypress/.github/workflows/action.yml
+      - name: Run belajarcypress
+        run: |
+          cd belajarcypress/.github/workflows
+          # Jalankan action2.yml sesuai dengan cara yang diperlukan
+          npx act action.yml  
+          # Sesuaikan dengan cara Anda mengeksekusi action
