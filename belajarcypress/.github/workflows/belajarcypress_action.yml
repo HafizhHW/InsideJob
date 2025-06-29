@@ -30,7 +30,7 @@ jobs:
         run: npx cypress run
 
       - name: Upload Cypress video dan screenshot (optional)
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-artifacts

@@ -44,3 +44,12 @@ jobs:
         run: |
           cd belajarcypress/
           npx cypress run 
+      
+      - name: Upload Cypress video dan screenshot (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/videos
+            cypress/screenshots
